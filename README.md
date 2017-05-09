@@ -1,4 +1,4 @@
 # Amplificador-RF
+Simulación de un amplificador RF en QUCS.
 
-En este repo se encontraron archivos para la simulacion de amplificadores RF. 
 El conocimiento te hace libre.
