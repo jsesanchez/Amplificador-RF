@@ -1,6 +1,6 @@
 <Qucs Schematic 0.0.19>
 <Properties>
-  <View=-101,-5,1830,1158,0.573087,38,0>
+  <View=-101,-89,1830,1100,0.573087,38,0>
   <Grid=10,10,1>
   <DataSet=transistor.dat>
   <DataDisplay=transistor.dpl>
@@ -16,10 +16,8 @@
 <Symbol>
 </Symbol>
 <Components>
-  <GND * 1 350 310 0 0 0 0>
   <GND * 1 120 320 0 0 0 0>
   <Pac P2 1 410 250 18 -26 0 1 "2" 1 "Z_L" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
-  <GND * 1 410 310 0 0 0 0>
   <Pac P1 1 120 280 18 -26 0 1 "1" 1 "Z_GEN" 1 "0 dBm" 0 "1 GHz" 0 "26.85" 0>
   <Eqn Eqn1 1 510 30 -32 17 0 0 "dB_S11=dB(S[1,1])" 1 "dB_S22=dB(S[2,2])" 1 "dB_S21=dB(S[2,1])" 1 "dB_S12=dB(S[1,2])" 1 "S12=S[1,2]" 1 "S11=S[1,1]" 1 "S21=S[2,1]" 1 "S22=S[2,2]" 1 "yes" 0>
   <Eqn Eqn2 1 650 30 -32 17 0 0 "ZO=50" 1 "Z_GEN=ZO" 1 "Z_L=ZO" 1 "Sigma_S=(Z_GEN-ZO)/(ZO+Z_GEN)" 1 "Sigma_L=(Z_L-ZO)/(ZO+Z_L)" 1 "Sigma_IN=(S11*(1-S22*Sigma_L)+S21*Sigma_L*S12)/(1-S22*Sigma_L)" 1 "Sigma_OUT=S22+(S12*S21*Sigma_S)/(1-S11*Sigma_S)" 1 "G_T=((1-abs(Sigma_S)^2)/abs(1-Sigma_IN*Sigma_S)^2)*(abs(S21)^2)*(1-abs(Sigma_L)^2)/abs(1-S22*Sigma_L)^2" 1 "G_T_dB=10*log10(G_T)" 1 "G_P=(1/(1-abs(Sigma_IN)^2))*(abs(S21)^2)*(1-abs(Sigma_L)^2)/abs(1-S22*Sigma_L)^2" 1 "G_P_bB=10*log10(G_P)" 1 "yes" 0>
@@ -27,16 +25,19 @@
   <Eqn Eqn4 1 520 390 -32 17 0 0 "G_T_Max=(abs(S21)/abs(S12))*(K-sqrt(K^2-1))" 1 "G_T_Max_dB=10*log10(G_T_Max)" 1 "yes" 0>
   <Eqn Eqn5 1 880 390 -32 17 0 0 "G_Max_Stable=10*log10(abs(S21)/abs(S12))" 1 "yes" 0>
   <Eqn Eqn6 1 1230 390 -32 17 0 0 "mu=Mu(S)" 1 "rollet=Rollet(S)" 1 "yes" 0>
-  <.SP SP1 1 120 40 0 95 0 0 "lin" 1 "0.5 GHz" 1 "3 GHz" 1 "2000" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
-  <Sub Transistor 1 280 170 -26 148 0 0 "S.sch" 0>
+  <.SP SP1 1 120 0 0 95 0 0 "lin" 1 "0.5 GHz" 1 "3 GHz" 1 "2000" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
+  <GND * 1 350 320 0 0 0 0>
+  <GND * 1 410 320 0 0 0 0>
+  <Sub Transistor 1 280 330 -26 -168 1 0 "S.sch" 0>
 </Components>
 <Wires>
   <120 310 120 320 "" 0 0 0 "">
-  <410 170 410 220 "" 0 0 0 "">
-  <410 280 410 310 "" 0 0 0 "">
-  <350 170 410 170 "" 0 0 0 "">
-  <350 170 350 190 "" 0 0 0 "">
   <120 250 240 250 "" 0 0 0 "">
+  <350 160 350 190 "" 0 0 0 "">
+  <350 160 410 160 "" 0 0 0 "">
+  <410 160 410 220 "" 0 0 0 "">
+  <350 310 350 320 "" 0 0 0 "">
+  <410 280 410 320 "" 0 0 0 "">
 </Wires>
 <Diagrams>
   <Rect 56 686 245 206 3 #c0c0c0 1 00 1 5e+08 5e+08 3e+09 1 -40 20 20 1 -1 0.5 1 315 0 225 "" "" "">
